@@ -29,7 +29,7 @@ export default function TeacherDetail(){
       <h2 id="book" className="mt-8 mb-3 font-semibold">Chọn lịch học thử (25')</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {slots.map((s, i) => (
-          <button key={i} onClick={() => nav(`/checkout/trial?teacherId=${id}&start=${encodeURIComponent(s.startUtc)}`)} className="border rounded-xl p-3 text-sm">
+          <button key={i} onClick={() => nav(`/checkout/trial?teacherId=${id}&start=${encodeURIComponent(s.startUtc)}`)} className="border hover:bg-slate-100 rounded-xl p-3 text-sm">
             {format(new Date(s.startUtc), 'dd/MM HH:mm')}
           </button>
         ))}

@@ -11,9 +11,17 @@ export default function Teachers(){
 
   return (
     <div className="max-w-5xl mx-auto px-4 mt-6">
-      <h1 className="text-2xl font-semibold mb-4">Giáo viên</h1>
-      <div className="grid gap-3">
-        {items.map(t => <TeacherCard key={t.id} id={t.id} name={t.name} photoUrl={t.photoUrl} ratePer25={t.teacherProfile?.ratePer25 ?? 99000} skills={t.teacherProfile?.skills ?? []} rating={t.teacherProfile?.rating ?? 5} />)}
+      <h1 className="text-3xl font-semibold mb-4">Teacher</h1>
+      <div className="glass rounded-lg grid gap-9 p-6">
+        <div className=''>
+          {items.map(t => <TeacherCard 
+            key={t.id} id={t.id} 
+            name={t.name} 
+            photoUrl={t.photoUrl} 
+            ratePer25={t.teacherProfile?.ratePer25 ?? 99000} 
+            skills={t.teacherProfile?.skills ?? []} 
+            rating={t.teacherProfile?.rating ?? 5} />)}
+        </div>
       </div>
     </div>
   )

@@ -3,3 +3,50 @@
 @tailwind utilities;
 
 body { @apply bg-white text-gray-900; }
+
+html, body {
+    height: 100%;
+}
+/* ... giữ nguyên @tailwind base/components/utilities ... */
+
+:root {
+  --bg: radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,.25), transparent 60%),
+        radial-gradient(1000px 500px at 90% 20%, rgba(16,185,129,.25), transparent 55%),
+        radial-gradient(1000px 700px at 50% 100%, rgba(244,63,94,.25), transparent 50%);
+}
+
+body {
+  background-color: black;
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #e5e7eb;
+}
+
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' opacity='0.08' viewBox='0 0 200 200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.glass {
+  @apply backdrop-blur-xl bg-white/10 border border-white/10 shadow-2xl;
+}
+
+.input-base {
+  @apply w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:ring-2 focus:ring-indigo-400/50 focus:border-transparent;
+}
+
+.btn-primary {
+  @apply w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-medium px-4 py-3 transition;
+}
+
+.btn-ghost {
+  @apply w-full rounded-xl border border-white/15 hover:bg-white/5 text-white px-4 py-3 transition;
+}
+
+.link-muted {
+  @apply text-white/70 hover:text-white transition underline underline-offset-4;
+}

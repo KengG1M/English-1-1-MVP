@@ -44,4 +44,28 @@ export class BookingsService {
       })
     })
   }
+
+  // server/src/bookings/bookings.service.ts
+  async myBookings(studentId: string, range: 'upcoming'|'past') {
+    const now = new Date()
+    const where: any = { studentId }
+    if (range === 'upcoming') where.startUtc = { gte: now }
+    else where.startUtc = { lt: now }
+
+    const rows = await this.prisma.booking.findMany({
+      where, orderBy: { startUtc: 'asc' },
+      include: { teacher: true }
+    })
+    return rows.map(r => ({
+      id: r.id,
+      teacherId: r.teacherId,
+      teacherName: r.teacher?.name,
+      type: r.type,
+      status: r.status,
+      startUtc: r.startUtc,
+      endUtc: r.endUtc,
+    }))
+  }
+
 }
+
