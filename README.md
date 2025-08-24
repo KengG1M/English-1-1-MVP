@@ -21,7 +21,7 @@ The server starts at `http://localhost:3000` with CORS enabled.
 ### 3) Client (React + Vite + Tailwind)
 ```bash
 cd client
-cp .env.example .env    # ensure VITE_API_URL points to your server
+cp .env    # ensure VITE_API_URL points to your server
 npm install
 npm run dev
 ```
