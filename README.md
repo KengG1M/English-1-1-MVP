@@ -1,7 +1,3 @@
-Here’s the **English README** version of your current repo 👇
-
----
-
 # English 1-1 MVP (React + NestJS + Prisma + JWT)
 
 An MVP for a 1-on-1 English learning platform: browse teachers → view available time slots → book a **25’ free trial lesson** → (buy packages later).
