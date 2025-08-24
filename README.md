@@ -199,22 +199,6 @@ npm run prisma:seed
 
 ---
 
-## 🐞 Troubleshooting
-
-* **Cannot POST /auth/login**
-  → AuthModule not added to AppModule, or backend not running/mis-port.
-
-* **Invalid credentials**
-  → Seeding mismatch, wrong DB, or `passwordHash` is empty. Check with `npx prisma studio`.
-
-* **401 on booking**
-  → Missing Bearer token. Login first.
-
-* **Gradient split line**
-  → Ensure `background-repeat: no-repeat; background-size: cover;` in `index.css`.
-
----
-
 ## 📦 Useful Scripts
 
 **Server**
